@@ -6,6 +6,8 @@
         content="IE=edge">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="styles.css">
   <title>Document</title>
 </head>
 
@@ -19,13 +21,15 @@
   </p>
   <input type="date"
          id="inReyesMagos">
-  <button id="buReyesMagos">Click Me!</button>
+  <button id="butReyesMagos">Click Me!</button>
+  <p id="outReyesMagos"></p>
 
   <h2>Fecha Actual</h2>
   <p>
     Pulsa el botón para visualizar la hora actual:
   </p>
-  <button id="buDate">Click Me!</button>
+  <button id="butDate">Click Me!</button>
+  <p id="outDate"></p>
 
   <h2>Área y diámetro de un círculo</h2>
   <p>
@@ -34,8 +38,10 @@
   </p>
   <label for="inCircle">Radio:</label>
   <input type="number"
-         id="inCircle">
-  <button id="buCircle">Click Me!</button>
+         id="inCircle"
+         value="1">
+  <button id="butCircle">Click Me!</button>
+  <p id="outCircle"></p>
 
   <h2>Número aleatorio</h2>
   <p>
@@ -43,13 +49,29 @@
   </p>
   <label for="inRandMin">Min:</label>
   <input type="number"
-         id="inRandMin">
+         id="inRandMin"
+         value="0">
   <label for="inRandMax">Max:</label>
   <input type="number"
-         id="inRandMax">
-  <button id="buRand">Click Me!</button>
+         id="inRandMax"
+         value="10">
+  <button id="butRand">Click Me!</button>
+  <p id="outRand"></p>
 
-  <h2>El último que dejo para luego</h2>
+  <h2>¡La Caja!</h2>
+  <textarea id="inCaja"
+            cols="50"
+            rows="5"></textarea>
+  <p id="expCaja"></p>
+  <textarea id="outCaja"
+            cols="50"
+            rows="5"
+            disabled></textarea>
+  <button id="butCajaMitad">Mitad</button>
+  <button id="butCajaUltimo">Último</button>
+  <button id="butCajaInvertida">Invertir</button>
+  <button id="butCajaGuiones">Guiones</button>
+  <button id="butCajaVocales">Vocales</button>
 
   <script src="main.js"></script>
 
