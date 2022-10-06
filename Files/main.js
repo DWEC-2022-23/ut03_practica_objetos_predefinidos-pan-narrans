@@ -93,6 +93,7 @@ butRand.onclick = function () {
 //#endregion
 
 //#region La Caja
+// References to DOM elements
 const inCaja = document.getElementById("inCaja");
 const expCaja = document.getElementById("expCaja");
 const outCaja = document.getElementById("outCaja");
@@ -102,33 +103,39 @@ const butCajaInvertida = document.getElementById("butCajaInvertida");
 const butCajaGuiones = document.getElementById("butCajaGuiones");
 const butCajaVocales = document.getElementById("butCajaVocales");
 
+// Functions
+const mitadCar        = (str) => { return str.slice(0, str.length / 2); };
+const ultimoCaracter  = (str) => { return str.match(/.$/); };
+const cadenaInversa   = (str) => { return str.split('').reverse().join(''); };
+const cadenaGuiones   = (str) => { return str.split('').join('-') };
+const contarVocales   = (str) => { return str.match(/[aeiou]/gi).length };
+
 butCajaMitad.onclick = function () {
-  let message = inCaja.value;
-  message = message.slice(0, message.length / 2);
+  let message = mitadCar(inCaja.value);
   expCaja.innerHTML = "La mitad del contenido de la caja:";
   outCaja.innerHTML = message;
 }
 
 butCajaUltimo.onclick = function () {
-  let message = inCaja.value.match(/.$/);
+  let message = ultimoCaracter(inCaja.value);
   expCaja.innerHTML = "El último carácter de la caja es:";
   outCaja.innerHTML = message;
 }
 
 butCajaInvertida.onclick = function () {
-  let message = inCaja.value.split('').reverse().join('');
+  let message = cadenaInversa(inCaja.value);
   expCaja.innerHTML = "El mensaje invertido de la caja es:";
   outCaja.innerHTML = message;
 }
 
 butCajaGuiones.onclick = function () {
-  let message = inCaja.value.split('').join('-');
+  let message = cadenaGuiones(inCaja.value);
   expCaja.innerHTML = "El mensaje invertido de la caja es:";
   outCaja.innerHTML = message;
 }
 
 butCajaVocales.onclick = function () {
-  let message = inCaja.value.match(/[aeiou]/gi).length;
+  let message = contarVocales(inCaja.value);
   expCaja.innerHTML = "El número de vocales contenidas dentro de la caja es:";
   outCaja.innerHTML = message;
 }
