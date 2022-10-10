@@ -43,6 +43,7 @@ butDate.onclick = function () {
   const days = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
+  fecha.setHours(0,0,0)
   let message = `Hoy es ${days[fecha.getDay()]}, ${fecha.getDate()} de ${months[fecha.getMonth()]} de ${fecha.getFullYear()} y son las ${fecha.getHours()}:${fecha.getMinutes()} horas.`
 
   alert(message);
@@ -54,14 +55,6 @@ butDate.onclick = function () {
 const inCircle = document.getElementById("inCircle");
 const butCircle = document.getElementById("butCircle");
 const outCircle = document.getElementById("outCircle");
-const calcularAreaCirculo = radio => {
-  return Math.round(
-    Math.PI * radio * radio * 100 + Number.EPSILON) / 100;
-};
-const calcularPeriCirculo = radio => {
-  return Math.round(
-    2 * Math.PI * radio * 100 + Number.EPSILON) / 100;
-};
 
 butCircle.onclick = function () {
   const radio = parseInt(inCircle.value);
@@ -78,10 +71,6 @@ const inRandMin = document.getElementById("inRandMin");
 const inRandMax = document.getElementById("inRandMax");
 const butRand = document.getElementById("butRand");
 const outRand = document.getElementById("outRand");
-const calcularAleatorio = (min, max) => {
-  if (min > max) { [min, max] = [max, min]; }
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
 
 butRand.onclick = function () {
   const n1 = parseInt(inRandMin.value);
@@ -103,13 +92,7 @@ const butCajaInvertida = document.getElementById("butCajaInvertida");
 const butCajaGuiones = document.getElementById("butCajaGuiones");
 const butCajaVocales = document.getElementById("butCajaVocales");
 
-// Functions
-const mitadCar        = (str) => { return str.slice(0, str.length / 2); };
-const ultimoCaracter  = (str) => { return str.match(/.$/); };
-const cadenaInversa   = (str) => { return str.split('').reverse().join(''); };
-const cadenaGuiones   = (str) => { return str.split('').join('-') };
-const contarVocales   = (str) => { return str.match(/[aeiou]/gi).length };
-
+// On click events
 butCajaMitad.onclick = function () {
   let message = mitadCar(inCaja.value);
   expCaja.innerHTML = "La mitad del contenido de la caja:";
