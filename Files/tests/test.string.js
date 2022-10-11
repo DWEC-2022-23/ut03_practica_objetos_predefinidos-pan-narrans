@@ -43,7 +43,7 @@ describe("String functions", function () {
     it("Should return 'H-e-l-l-o-.' for 'Hello.'.", function () {
       cadenaGuiones("Hello.").should.be.equal("H-e-l-l-o-.");
     });
-    it("Should return 'L-o-r-e-m- -i-p-s-u-m' for 'Lorem'.", function () {
+    it("Should return 'L-o-r-e-m- -i-p-s-u-m' for 'Lorem ipsum'.", function () {
       cadenaGuiones("Lorem ipsum").should.be.equal("L-o-r-e-m- -i-p-s-u-m");
     });
   })
