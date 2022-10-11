@@ -3,27 +3,14 @@
 const inReyesMagos = document.getElementById("inReyesMagos");
 const butReyesMagos = document.getElementById("butReyesMagos");
 const outReyesMagos = document.getElementById("outReyesMagos");
-const reyesMagos = fecha => {
-  const fechaReyes = new Date();
-  let tiempo = 0;
-
-  // Asignar el día de reyes.
-  fechaReyes.setFullYear(new Date().getFullYear() + 1);
-  fechaReyes.setHours(0, 0, 0);
-  fechaReyes.setDate(7);
-  fechaReyes.setMonth(0);
-
-  // Calcular el nº de días
-  tiempo = fechaReyes - fecha;
-  return Math.floor(tiempo / (1000 * 60 * 60 * 24));
-};
 
 butReyesMagos.onclick = function () {
   const tiempo = reyesMagos(new Date(inReyesMagos.value));
   let message;
 
-  if (tiempo < 0)
-    message = "Has viajado en el tiempo y se te han pasado los reyes.";
+  if (isNaN(tiempo)) {
+    message = "¡Introduce una fecha!";
+  }
   else if (tiempo == 0)
     message = "¡Mira debajo de el árbol que han llegado hoy!";
   else
@@ -39,13 +26,7 @@ const butDate = document.getElementById("butDate");
 const outDate = document.getElementById("outDate");
 
 butDate.onclick = function () {
-  const fecha = new Date();
-  const days = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
-  const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
-  fecha.setHours(0,0,0)
-  let message = `Hoy es ${days[fecha.getDay()]}, ${fecha.getDate()} de ${months[fecha.getMonth()]} de ${fecha.getFullYear()} y son las ${fecha.getHours()}:${fecha.getMinutes()} horas.`
-
+  let message = parseDate(new Date());
   alert(message);
   outDate.innerHTML = message;
 }
