@@ -1,16 +1,17 @@
 // Mage Kings
 function reyesMagos(fecha) {
-  const fechaReyes = new Date(fecha.getFullYear(), 0, 7, 0, 0, 0);
+  const fechaConverted = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
+  const fechaReyes = new Date(fecha.getFullYear(), 0, 6, 0, 0, 0);
   let tiempo = 0;
 
+
+  console.log(fecha, fechaConverted)
   // Ajustar el año de la fecha de Reyes con año de la fecha introducida.
-  tiempo = fechaReyes - fecha;
+  tiempo = fechaReyes - fechaConverted;
   tiempo = tiempo < 0
-    ? fechaReyes.setFullYear(fechaReyes.getFullYear() + 1) - fecha
+    ? fechaReyes.setFullYear(fechaReyes.getFullYear() + 1) - fechaConverted
     : tiempo;
 
-  console.log(fecha);
-  console.log(fechaReyes);
   // Calcular el nº de días.
   return Math.floor(tiempo / (1000 * 60 * 60 * 24));
 };
