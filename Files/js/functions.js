@@ -52,8 +52,8 @@ function calcularAleatorio(min, max) {
 };
 
 // String Functions
-function mitadCar(str) { return str.slice(0, str.length / 2); };
-function ultimoCaracter(str) { return str.match(/.$/)[0]; };
-function cadenaInversa(str) { return str.split('').reverse().join(''); };
-function cadenaGuiones(str) { return str.split('').join('-') };
-function contarVocales(str) { return (str.match(/[aeiou]/gi) || []).length };
+function mitadCar(str) { return str.trim().slice(0, str.length / 2); };
+function ultimoCaracter(str) { return str.trim().match(/.$/)[0]; };
+function cadenaInversa(str) { return str.trim().split('').reverse().join(''); };
+function cadenaGuiones(str) { return str.trim().split('').join('-') };
+function contarVocales(str) { return (str.trim().match(/[aeiou]/gi) || []).length };
