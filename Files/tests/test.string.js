@@ -22,8 +22,8 @@ describe("String functions", function () {
     it("Should return 'm' for 'Lorem'.", function () {
       ultimoCaracter("Lorem").should.be.equal("m");
     });
-    it("Should return ' ' for 'Lorem '.", function () {
-      ultimoCaracter("Lorem ").should.be.equal(" ");
+    it("Should return 'm' for 'Lorem '.", function () {
+      ultimoCaracter("Lorem ").should.be.equal("m");
     });
   })
 
