@@ -16,7 +16,6 @@ butReyesMagos.onclick = function () {
   else
     message = "Faltan " + tiempo + " días para que vengas los reyes.";
 
-  alert(message);
   outReyesMagos.innerHTML = message;
 };
 //#endregion
@@ -27,7 +26,6 @@ const outDate = document.getElementById("outDate");
 
 butDate.onclick = function () {
   let message = parseDate(new Date());
-  alert(message);
   outDate.innerHTML = message;
 }
 //#endregion
@@ -57,7 +55,6 @@ butRand.onclick = function () {
   const n1 = parseInt(inRandMin.value);
   const n2 = parseInt(inRandMax.value);
   const message = calcularAleatorio(n1, n2)
-  alert(message);
   outRand.innerHTML = message;
 };
 //#endregion
