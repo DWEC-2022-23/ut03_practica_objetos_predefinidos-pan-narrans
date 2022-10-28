@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous">
+
+  <title>Document</title>
+</head>
+
+<body class="container my-5">
+  <h1>PRÁCTICA: <br> Utilización de objetos javascript</h1>
+
+  <a href="./tests/index.html"
+     class="btn btn-primary">-> Página de Tests</a>
+
+  <!-- REYES MAGOS -->
+  <h2>Reyes Magos</h2>
+  <p>
+    Calculadora que indica el número de días que faltan para que vengan los Reyes Magos a partir de la fecha
+    introducida.
+  </p>
+  <div class="form-floating mb-3">
+    <input type="date"
+           id="inReyesMagos"
+           class="form-control">
+    <label for="inReyesMagos">Fecha:</label>
+  </div>
+  <button id="butReyesMagos"
+          class="btn btn-primary">Días para reyes</button>
+  <p id="outReyesMagos"></p>
+
+  <!-- PARSE DATE -->
+  <h2>Fecha Actual</h2>
+  <p class="form-label">
+    Pulsa el botón para visualizar la hora actual:
+  </p>
+  <button id="butDate"
+          class="btn btn-primary">Ver fecha</button>
+  <p id="outDate"></p>
+
+  <!-- CIRCLE AREA -->
+  <h2>Área y diámetro de un círculo</h2>
+  <p>
+    Calcula el área y diámetro de un círculo a partir de su radio. <br>
+    Los resultados se muestran con 2 decimales de precisión.
+  </p>
+  <div class="form-floating mb-3">
+    <input type="number"
+           id="inCircle"
+           min="0"
+           value="1"
+           class="form-control">
+    <label for="inCircle">Radio:</label>
+  </div>
+  <button id="butCircle"
+          class="btn btn-primary">Calcular</button>
+  <p id="outCircle"></p>
+
+  <!-- RANDOM NUMBER -->
+  <h2>Número aleatorio</h2>
+  <p>
+    Genera un número aleatorio dentro de los límites establecidos.
+  </p>
+  <div class="input-group mb-3">
+    <div class="form-floating">
+      <input type="number"
+             id="inRandMin"
+             value="0"
+             class="form-control">
+      <label for="inRandMin">Min:</label>
+    </div>
+    <div class="form-floating">
+      <input type="number"
+             id="inRandMax"
+             value="10"
+             class="form-control">
+      <label for="inRandMax">Max:</label>
+    </div>
+  </div>
+  <button id="butRand"
+          class="btn btn-primary">Generar</button>
+  <p>El número aleatorio es: <span id="outRand"></span></p>
+
+  <!-- THE BOX -->
+  <h2>¡La Caja!</h2>
+  <p id="expCaja">¡Pulsa un botón!</p>
+  <div class="input-group mb-3">
+    <textarea id="inCaja"
+              rows="6"
+              class="form-control"></textarea>
+    <textarea id="outCaja"
+              rows="6"
+              class="form-control"
+              disabled></textarea>
+  </div>
+  <div class="btn-group"
+       role="group"
+       aria-label="Botones de procesado de strings">
+    <button id="butCajaMitad"
+            class="btn btn-outline-primary">Mitad</button>
+    <button id="butCajaUltimo"
+            class="btn btn-outline-primary">Último</button>
+    <button id="butCajaInvertida"
+            class="btn btn-outline-primary">Invertir</button>
+    <button id="butCajaGuiones"
+            class="btn btn-outline-primary">Guiones</button>
+    <button id="butCajaVocales"
+            class="btn btn-outline-primary">Vocales</button>
+  </div>
+  <script src="js/functions.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+          crossorigin="anonymous"></script>
+
+</body>
+
+</html>
